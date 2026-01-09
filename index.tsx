@@ -12,9 +12,9 @@ import {
   Area, AreaChart, PieChart, Pie, Cell 
 } from 'recharts';
 
-// --- COMPONENTS ---
+// --- COMPONENTS DEFINITIONS ---
 
-// 1. SIDEBAR
+// 1. SIDEBAR COMPONENT
 const Sidebar = () => {
   return (
     <aside className="w-64 h-full bg-white border-r border-gray-100 flex flex-col justify-between flex-shrink-0 z-20 transition-all duration-300 hidden md:flex">
@@ -106,7 +106,7 @@ const NavItem = ({ to, icon, label }) => {
   );
 };
 
-// 2. HEADER
+// 2. HEADER COMPONENT
 const Header = () => {
   const location = useLocation();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -202,7 +202,7 @@ const Header = () => {
   );
 };
 
-// 3. DASHBOARD PAGE
+// 3. DASHBOARD PAGE COMPONENT
 const Dashboard = () => {
   const trafficData = [
     { name: 'Lun', visits: 2500 },
@@ -376,13 +376,16 @@ const Dashboard = () => {
   );
 };
 
-// 4. PLACEHOLDER PAGE
+// 4. PLACEHOLDER PAGE COMPONENT
 const PlaceholderPage = ({ title, icon }) => {
-  // Safe dynamic icon lookup
+  // Safe dynamic icon lookup to prevent crashes
   let IconComponent = FileText;
   if (LucideIcons && icon) {
+     // Convert dash-case or camelCase to PascalCase for component name
      const pascalCase = icon.charAt(0).toUpperCase() + icon.slice(1).replace(/-([a-z])/g, g => g[1].toUpperCase());
+     // @ts-ignore
      if (LucideIcons[pascalCase]) {
+       // @ts-ignore
        IconComponent = LucideIcons[pascalCase];
      }
   }
