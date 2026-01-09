@@ -1,0 +1,5 @@
+{
+  "name": "News AI Dashboard",
+  "description": "A responsive admin dashboard for News AI featuring data visualization, distinct routing, and a modern Tailwind UI.",
+  "requestFramePermissions": []
+}
