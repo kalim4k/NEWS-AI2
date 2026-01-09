@@ -1,9 +1,9 @@
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import Dashboard from './pages/Dashboard';
-import PlaceholderPage from './pages/PlaceholderPage';
+import Sidebar from './components/Sidebar.tsx';
+import Header from './components/Header.tsx';
+import Dashboard from './pages/Dashboard.tsx';
+import PlaceholderPage from './pages/PlaceholderPage.tsx';
 
 // Layout component to wrap the Sidebar, Header and Main Content
 const Layout: React.FC = () => {
